@@ -1,0 +1,14 @@
+{
+  "name": "pulsar",
+  "version": "1.0.0",
+  "description": "pulsar web server",
+  "main": "src/main.js",
+  "scripts": {
+    "run": "node src/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  }
+}
