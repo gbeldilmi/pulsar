@@ -1,5 +1,6 @@
 {
   "token": "token_here",
   "master": "master_id_here",
+  "channel": "channel_id_here",
   "port": 3000
 }
