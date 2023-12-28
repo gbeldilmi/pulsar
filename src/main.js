@@ -28,17 +28,20 @@ const client = new discord.Client({
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
+client.on('messageCreate', msg => {
+  if (msg.channelId === config.channel) {
+    if (msg.content === 'cls' && msg.author.id === config.master) {
+      msg.channel.messages.fetch().then(messages => {
+        msg.channel.bulkDelete(messages);
+      });
+    }
+  }
+});
 
 const handler = (req) => {
-  // send a message to the channel
   const channel = client.channels.cache.get(config.channel);
-  let message = "";
-  if (req.method === "POST") {
-    message += "POST " + req.body;
-  } else {
-    message += "GET " + req.url;
-  }
-  message += " from **" + req.socket.remoteAddress + "**";
+  let message = "`" + req.method + " " + req.url;
+  message += " from " + req.socket.remoteAddress + "`";
   message += "\n```json\n" + JSON.stringify(req.headers) + "\n```";
   channel.send(message);
 };
