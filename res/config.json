@@ -5,7 +5,7 @@
     "channel": "channel_id_here"
   },
   "file": {
-    "path": "path_here"
+    "path": "./pulsar.fifo"
   },
   "http": {
     "port": 3000
