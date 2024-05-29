@@ -1,6 +1,13 @@
 {
-  "token": "token_here",
-  "master": "master_id_here",
-  "channel": "channel_id_here",
-  "port": 3000
+  "discord": {
+    "token": "token_here",
+    "master": "master_id_here",
+    "channel": "channel_id_here"
+  },
+  "file": {
+    "path": "path_here"
+  },
+  "http": {
+    "port": 3000
+  }
 }
